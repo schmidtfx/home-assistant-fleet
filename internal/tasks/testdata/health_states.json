@@ -1,0 +1,20 @@
+[
+  {"entity_id": "sensor.kitchen_motion_battery", "state": "9", "last_changed": "2026-10-29T08:00:00Z",
+   "attributes": {"device_class": "battery", "unit_of_measurement": "%", "friendly_name": "Kitchen motion battery"}},
+  {"entity_id": "sensor.front_door_battery", "state": "14.5", "last_changed": "2026-10-29T08:00:00Z",
+   "attributes": {"device_class": "battery", "unit_of_measurement": "%"}},
+  {"entity_id": "sensor.hallway_battery", "state": "80", "last_changed": "2026-10-29T08:00:00Z",
+   "attributes": {"device_class": "battery", "unit_of_measurement": "%"}},
+  {"entity_id": "binary_sensor.window_battery_low", "state": "on", "last_changed": "2026-10-29T08:00:00Z",
+   "attributes": {"device_class": "battery"}},
+  {"entity_id": "sensor.garage_battery", "state": "unavailable", "last_changed": "2026-10-29T08:00:00Z",
+   "attributes": {"device_class": "battery", "unit_of_measurement": "%"}},
+  {"entity_id": "light.zha_1", "state": "unavailable", "last_changed": "2026-10-29T08:00:00Z", "attributes": {}},
+  {"entity_id": "light.zha_2", "state": "unavailable", "last_changed": "2026-10-29T08:00:00Z", "attributes": {}},
+  {"entity_id": "light.zha_3", "state": "unavailable", "last_changed": "2026-10-29T08:00:00Z", "attributes": {}},
+  {"entity_id": "light.zha_recent", "state": "unavailable", "last_changed": "2026-10-29T11:45:00Z", "attributes": {}},
+  {"entity_id": "light.zha_disabled", "state": "unavailable", "last_changed": "2026-10-29T08:00:00Z", "attributes": {}},
+  {"entity_id": "switch.hue_1", "state": "unavailable", "last_changed": "2026-10-29T08:00:00Z", "attributes": {}},
+  {"entity_id": "switch.hue_2", "state": "unavailable", "last_changed": "2026-10-29T08:00:00Z", "attributes": {}},
+  {"entity_id": "sensor.template_thing", "state": "unavailable", "last_changed": "2026-10-29T08:00:00Z", "attributes": {}}
+]

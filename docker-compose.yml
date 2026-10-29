@@ -1,0 +1,34 @@
+services:
+  hafleet:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      # Generate the key once with: mkdir -p data && openssl rand -hex 32 > data/hafleet.key
+      HAFLEET_SECRET_KEY_FILE: /run/secrets/hafleet_key
+      # Set to "false" only when accessing over plain HTTP (e.g. local testing).
+      HAFLEET_SECURE_COOKIES: "${HAFLEET_SECURE_COOKIES:-true}"
+    secrets:
+      - hafleet_key
+    volumes:
+      - hafleet-data:/data
+    restart: unless-stopped
+
+  # Optional local Home Assistant with demo entities for end-to-end testing:
+  #   docker compose --profile dev up
+  # Then open http://localhost:8123, finish onboarding, create a long-lived token,
+  # and add http://homeassistant:8123 in hafleet (enable "Allow insecure plain HTTP").
+  homeassistant:
+    profiles: ["dev"]
+    image: ghcr.io/home-assistant/home-assistant:stable
+    ports:
+      - "8123:8123"
+    volumes:
+      - ./dev/ha-config:/config
+
+secrets:
+  hafleet_key:
+    file: ./data/hafleet.key
+
+volumes:
+  hafleet-data:

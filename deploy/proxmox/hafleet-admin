@@ -1,0 +1,33 @@
+#!/bin/sh
+# Manage hafleet users as the service user, so database files keep the right owner.
+#   hafleet-admin create <username> [role]   create a user (prompts for a password; role defaults to admin)
+#   hafleet-admin passwd <username>          change a password and revoke that user's sessions
+#   hafleet-admin role <username> <role>     change a role (viewer, operator, admin) and revoke sessions
+set -eu
+
+usage() {
+	echo "usage: hafleet-admin create <username> [role] | passwd <username> | role <username> <role>" >&2
+	exit 2
+}
+
+[ $# -ge 2 ] || usage
+case "$1" in
+create) [ $# -le 3 ] || usage ;;
+passwd) [ $# -eq 2 ] || usage ;;
+role) [ $# -eq 3 ] || usage ;;
+*) usage ;;
+esac
+case "$2" in *[!A-Za-z0-9._@-]* | "") echo "invalid username: $2" >&2; exit 2 ;; esac
+role="${3:-}"
+case "$role" in "" | viewer | operator | admin) ;; *) echo "invalid role: $role" >&2; exit 2 ;; esac
+[ "$(id -u)" -eq 0 ] || { echo "run hafleet-admin as root" >&2; exit 1; }
+id hafleet >/dev/null 2>&1 || { echo "start the service first: rc-service hafleet start" >&2; exit 1; }
+
+case "$1" in
+create) args="create $2${role:+ -role $role}" ;;
+passwd) args="passwd $2" ;;
+role) args="role $2 $role" ;;
+esac
+
+# -p keeps HAFLEET_ADMIN_PASSWORD for non-interactive use.
+exec su -p -s /bin/sh -c "HAFLEET_DATA_DIR=/var/lib/hafleet exec /usr/local/bin/hafleet admin $args" hafleet

@@ -1,0 +1,11 @@
+{
+  "unsupported": ["os"],
+  "unhealthy": ["docker"],
+  "suggestions": [
+    {"uuid": "s1", "type": "execute_reboot", "context": "system", "reference": null, "auto": false}
+  ],
+  "issues": [
+    {"uuid": "i1", "type": "reboot_required", "context": "system", "reference": null}
+  ],
+  "checks": []
+}

@@ -1,0 +1,6 @@
+#!/bin/sh
+# Starts hafleet with the settings from /etc/hafleet/hafleet.env (run by the OpenRC service).
+set -a
+. /etc/hafleet/hafleet.env
+set +a
+exec /usr/local/bin/hafleet serve "$@"

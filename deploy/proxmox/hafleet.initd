@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+# OpenRC service for hafleet (Proxmox LXC template).
+
+name="hafleet"
+description="Home Assistant fleet manager"
+
+supervisor="supervise-daemon"
+command="/usr/local/bin/hafleet-run"
+command_user="hafleet:hafleet"
+output_log="/var/log/hafleet.log"
+error_log="/var/log/hafleet.log"
+respawn_delay=5
+respawn_max=0
+
+depend() {
+	need net
+	after firewall
+}
+
+start_pre() {
+	# The service user is created on first start, so the template needs no passwd edits.
+	if ! id hafleet >/dev/null 2>&1; then
+		addgroup -S hafleet && adduser -S -D -H -h /var/lib/hafleet -s /sbin/nologin -G hafleet hafleet || return 1
+	fi
+	checkpath -d -m 0700 -o hafleet:hafleet /var/lib/hafleet
+	checkpath -d -m 0750 -o root:hafleet /etc/hafleet
+	checkpath -f -m 0640 -o root:hafleet /etc/hafleet/hafleet.env
+	checkpath -f -m 0640 -o hafleet:hafleet /var/log/hafleet.log
+
+	# Generate the token encryption key once. Back it up: without it, stored HA tokens cannot be decrypted.
+	if [ ! -s /etc/hafleet/secret.key ]; then
+		einfo "Generating /etc/hafleet/secret.key"
+		(umask 077 && /usr/local/bin/hafleet genkey > /etc/hafleet/secret.key) || return 1
+	fi
+	checkpath -f -m 0600 -o hafleet:hafleet /etc/hafleet/secret.key
+}

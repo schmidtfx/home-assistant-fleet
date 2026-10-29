@@ -1,0 +1,4 @@
+# Keep only configuration.yaml; HA writes its state here at runtime.
+*
+!.gitignore
+!configuration.yaml

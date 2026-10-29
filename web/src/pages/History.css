@@ -1,0 +1,17 @@
+/*
+ * Chart colors (dataviz reference palette). Severities use the fixed status
+ * colors with a neutral for info; opened/resolved use categorical slots 1-2.
+ * Dark values are their own validated steps, not an automatic flip.
+ */
+.hf-history {
+  --hf-sev-critical: #d03b3b;
+  --hf-sev-warning: #fab219;
+  --hf-sev-info: #8a8984;
+  --hf-opened: #2a78d6;
+  --hf-resolved: #eb6834;
+}
+[data-mantine-color-scheme='dark'] .hf-history {
+  --hf-sev-info: #8a8984;
+  --hf-opened: #3987e5;
+  --hf-resolved: #d95926;
+}

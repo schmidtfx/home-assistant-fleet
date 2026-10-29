@@ -1,0 +1,12 @@
+[
+  {"name": "homeassistant.components.zha.core.cluster_handlers", "message": ["Failed to read attribute from 192.168.1.20"],
+   "level": "ERROR", "source": ["components/zha/core.py", 120], "timestamp": 1793271000, "first_occurred": 1793270000, "count": 4, "exception": ""},
+  {"name": "homeassistant.components.zha", "message": ["Coordinator not responding"],
+   "level": "CRITICAL", "source": ["components/zha/__init__.py", 80], "timestamp": 1793271500, "first_occurred": 1793200000, "count": 40, "exception": ""},
+  {"name": "custom_components.hacs.base", "message": ["Rate limited"],
+   "level": "ERROR", "source": ["custom_components/hacs/base.py", 10], "timestamp": 1793271000, "first_occurred": 1793270500, "count": 2, "exception": ""},
+  {"name": "homeassistant.components.mqtt", "message": ["Old error"],
+   "level": "ERROR", "source": ["components/mqtt/client.py", 5], "timestamp": 1793200000, "first_occurred": 1793100000, "count": 99, "exception": ""},
+  {"name": "homeassistant.components.mqtt", "message": ["Just a warning"],
+   "level": "WARNING", "source": ["components/mqtt/client.py", 6], "timestamp": 1793271000, "first_occurred": 1793270000, "count": 50, "exception": ""}
+]

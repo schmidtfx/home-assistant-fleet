@@ -1,0 +1,44 @@
+{
+  "issues": [
+    {
+      "breaks_in_ha_version": "2027.1.0",
+      "created": "2026-10-01T10:00:00+00:00",
+      "dismissed_version": null,
+      "domain": "homeassistant",
+      "is_fixable": false,
+      "issue_domain": null,
+      "issue_id": "deprecated_yaml_foo",
+      "learn_more_url": "https://www.home-assistant.io/integrations/foo",
+      "severity": "critical",
+      "translation_key": "deprecated_yaml",
+      "translation_placeholders": {},
+      "ignored": false
+    },
+    {
+      "breaks_in_ha_version": null,
+      "created": "2026-10-28T10:00:00+00:00",
+      "dismissed_version": null,
+      "domain": "hacs",
+      "is_fixable": true,
+      "issue_id": "restart_required_mushroom",
+      "learn_more_url": null,
+      "severity": "warning",
+      "translation_key": "restart_required",
+      "translation_placeholders": {"name": "Mushroom"},
+      "ignored": false
+    },
+    {
+      "breaks_in_ha_version": null,
+      "created": "2026-09-01T10:00:00+00:00",
+      "dismissed_version": "2026.9.0",
+      "domain": "zha",
+      "is_fixable": false,
+      "issue_id": "old_thing",
+      "learn_more_url": null,
+      "severity": "warning",
+      "translation_key": "old_thing",
+      "translation_placeholders": null,
+      "ignored": true
+    }
+  ]
+}

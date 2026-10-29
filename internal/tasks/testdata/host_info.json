@@ -1,0 +1,1 @@
+{"agent_version": "1.7.2", "chassis": "embedded", "disk_free": 3.4, "disk_total": 28.6, "disk_used": 25.2, "disk_life_time": null, "features": ["reboot", "shutdown"], "hostname": "homeassistant", "kernel": "6.12.47-haos-raspi", "operating_system": "Home Assistant OS 16.2"}

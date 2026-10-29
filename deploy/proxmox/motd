@@ -1,0 +1,8 @@
+hafleet — Home Assistant fleet manager
+
+  Web UI:        http://<container-ip>:8080
+  Create admin:  hafleet-admin create admin
+  Settings:      /etc/hafleet/hafleet.env  (then: rc-service hafleet restart)
+  Logs:          tail -f /var/log/hafleet.log
+  Data:          /var/lib/hafleet  (back up together with /etc/hafleet/secret.key)
+

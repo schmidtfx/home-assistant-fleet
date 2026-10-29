@@ -1,0 +1,10 @@
+[
+  {"entity_id": "light.zha_1", "platform": "zha", "disabled_by": null},
+  {"entity_id": "light.zha_2", "platform": "zha", "disabled_by": null},
+  {"entity_id": "light.zha_3", "platform": "zha", "disabled_by": null},
+  {"entity_id": "light.zha_recent", "platform": "zha", "disabled_by": null},
+  {"entity_id": "light.zha_disabled", "platform": "zha", "disabled_by": "user"},
+  {"entity_id": "switch.hue_1", "platform": "hue", "disabled_by": null},
+  {"entity_id": "switch.hue_2", "platform": "hue", "disabled_by": null},
+  {"entity_id": "sensor.garage_battery", "platform": "zha", "disabled_by": null}
+]

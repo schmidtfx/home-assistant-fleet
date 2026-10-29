@@ -1,0 +1,4 @@
+# Minimal Home Assistant config for local hafleet testing.
+# The demo integration provides demo update entities and repair issues.
+default_config:
+demo:
