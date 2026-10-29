@@ -140,7 +140,7 @@ The metrics contain instance names and versions, never URLs or tokens. Counters 
 
 hafleet can show its view of an instance inside that instance, as entities on a "hafleet" device. Each instance only receives its own data.
 
-1. Install the **hafleet** integration from [home-assistant-fleet-hacs](https://github.com/schmidtfx/home-assistant-fleet-hacs) through HACS (custom repository) and add it under Settings → Devices & services. Pick the Home Assistant user whose token hafleet uses; the instance form in hafleet shows its user ID.
+1. Install the **hafleet** integration from [home-assistant-fleet-hass](https://github.com/schmidtfx/home-assistant-fleet-hass) through HACS (custom repository) and add it under Settings → Devices & services. Pick the Home Assistant user whose token hafleet uses; the instance form in hafleet shows its user ID.
 2. In hafleet, edit the instance and turn on **Publish status to Home Assistant**. The token must belong to an admin user.
 
 The integration creates an open-tasks sensor, a last-sync timestamp, a connection sensor, and one problem binary sensor per task kind (for example "Backup stale"). Acknowledged tasks do not count as open. The entities keep their state across Home Assistant restarts and become unavailable when hafleet has not reported for 15 minutes.

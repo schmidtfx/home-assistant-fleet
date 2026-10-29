@@ -12,7 +12,7 @@ import (
 
 // Status publishing: with PublishStatus on, hafleet fires a hafleet_status
 // event on the instance whenever its view changes (and as a heartbeat). The
-// hafleet custom integration (home-assistant-fleet-hacs) turns the event into
+// hafleet custom integration (home-assistant-fleet-hass) turns the event into
 // entities. An instance only ever receives its own view.
 
 const (
